@@ -1,0 +1,11 @@
+{
+    "feeds":[
+        {
+            "link":"https://hnrss.org/newest",
+            "name":"HRANK"
+        },{
+            "link":"https://www.theverge.com/rss/index.xml",
+            "name":"VERGE"
+        }
+    ]
+}
