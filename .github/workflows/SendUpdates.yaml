@@ -1,9 +1,9 @@
-name: Update My Resume
+name: Send Message
 
 on:
   push:
     branches:
-      - master
+      - main
   schedule:
     - cron:  '0 * * * *'
 
