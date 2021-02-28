@@ -4,8 +4,10 @@ on:
   push:
     branches:
       - main
-  schedule:
-    - cron:  '0 8 * * *'
+  schedule: 
+    - cron:  '23 2 * * *'
+
+# Setting 8:00AM for my Locale
 
 jobs:
 
