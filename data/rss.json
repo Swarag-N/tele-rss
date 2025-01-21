@@ -6,6 +6,10 @@
         },{
             "link":"https://www.theverge.com/rss/index.xml",
             "name":"VERGE"
+        }, 
+        {
+            "link":"https://www.seangoedecke.com/rss.xml",
+            "name": "sean goedecke"
         }
     ]
 }
