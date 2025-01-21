@@ -37,12 +37,7 @@ for feed in feeds['feeds']:
     } 
     FEED_DATA.append(dataTemp)
 
-
 pprint(FEED_DATA)
-# tesssst = json.dumps(FEED_DATA)
-# with open('data/sample.json','w') as f:
-#     f.write(tesssst)
-#   feeds = json.load(f)
 
 msg_str = ''
 
@@ -58,13 +53,3 @@ TOKEN = os.environ.get("BOT_API")
 CHAT_ID=os.environ.get("G_ID")
 bot = telegram.Bot(token=TOKEN)
 bot.sendMessage(chat_id=CHAT_ID, text=msg_str)
-# bot.send_message(chat_id=CHAT_ID,text="SSSSS")
-# print(a)
-# d = feedparser.parse('https://hnrss.org/newest')
-# pprint(d)
-
-# ```
-# Title
-# Author
-# Link
-# ```
