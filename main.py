@@ -5,6 +5,7 @@ from datetime import datetime
 from dotenv import load_dotenv
 import os
 import telegram
+import asyncio
 load_dotenv() 
 
 with open('data/rss.json') as f:
@@ -19,17 +20,15 @@ FEED_DATA=[]
 
 for feed in feeds['feeds']:
     tempFeedData = feedparser.parse(feed['link'])
-    # print(tempFeedData)
     # TODO Write Advance Logic to give 1-Only Todays && 2-Upto Five only
     temp = []
-    # print(tempFeedData['feed']['subtitle'])
     for i in range(5):
         post = tempFeedData['entries'][i]
         # pprint(post)
         req_data = {}
         req_data['title'] = post['title']
         req_data['link'] = post['link']
-        req_data['author'] = post['author']
+        req_data['author'] = post.get('author', "Confidential")
         temp.append(req_data)
     dataTemp = {
         'name':feed['name'],
@@ -49,7 +48,13 @@ for FEED in FEED_DATA:
 
 print(msg_str)
 
-TOKEN = os.environ.get("BOT_API")
-CHAT_ID=os.environ.get("G_ID")
-bot = telegram.Bot(token=TOKEN)
-bot.sendMessage(chat_id=CHAT_ID, text=msg_str)
+
+async def main():
+    TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
+    TELEGRAM_CHANNEL_ID=os.environ.get("TELEGRAM_CHANNEL_ID")
+    bot = telegram.Bot(token=TELEGRAM_BOT_TOKEN)
+    await bot.sendMessage(chat_id=TELEGRAM_CHANNEL_ID, text=msg_str)
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
