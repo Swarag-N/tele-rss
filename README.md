@@ -75,8 +75,8 @@ Tele-RSS is a Python-based tool that fetches the latest posts from RSS feeds and
    - Send updates to your Telegram group/user.
 
    Add your Telegram bot secrets to the repository settings under `Settings > Secrets and variables > Actions`:
-   - `BOT_API`
-   - `G_ID`
+   - `TELEGRAM_BOT_TOKEN`
+   - `TELEGRAM_CHANNEL_ID`
 
 ---
 
